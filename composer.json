@@ -1,5 +1,5 @@
 {
-    "name": "basic php webapp",
+    "name": "webapp/1",
     "description": "Basic sample for securing a WebApp with Auth0",
     "require": {
          "vlucas/phpdotenv": "2.3.0",
