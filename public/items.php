@@ -48,9 +48,8 @@ if (mysqli_num_rows($result) > 0)
             $items["kitid"] = $row["kitid"];
 
             $items["photos"] = $row["photos"];
-            $items["description"] = $row["description"];
-
-
+          //  $items["description"] = $row["description"];
+            $items["description"] = "here";
        // push single student into final response array
         array_push($response["items"], $items);
     }
