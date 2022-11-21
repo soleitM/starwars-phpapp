@@ -6,6 +6,8 @@ header("Access-Control-Allow-Origin: *");
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
+$user_id = $_GET["userId"];
+
 
 $servername = $url["host"];
 $username = $url["user"];
@@ -23,7 +25,7 @@ if ($conn->connect_error) {
 // Create query using SQL string
 
 // $sql = "SELECT * FROM `items` WHERE `subcategory_id`=$subcategory_id;";
-$sql = "SELECT * FROM `borrowingtable`";
+$sql = $user_id ? "SELECT * FROM `borrowingtable` where `studentID`=$user_id"" : "SELECT * FROM `borrowingtable`";
 $result = $conn->query($sql);
 
 
