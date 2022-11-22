@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 // Create query using SQL string
 
 // $sql = "SELECT * FROM `items` WHERE `subcategory_id`=$subcategory_id;";
-$sql = $user_id ? "SELECT * FROM `borrowingtable` where `studentID`=$user_id inner join `items` on `itemId`= `id`" : "SELECT * FROM `borrowingtable`";
+$sql = $user_id ? "SELECT * FROM `borrowingtable` where `studentID`=$user_id" : "SELECT * FROM `borrowingtable`";
 $result = $conn->query($sql);
 
 
