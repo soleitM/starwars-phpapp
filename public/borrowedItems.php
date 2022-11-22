@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0)
         	// Assign results for each database row, to temp student array
             $items = array();
             $items["itemId"] = $row["itemId"];
-            // $items["ItemName"] = $row["ItemName"];
+            $items["ItemName"] = $row["ItemName"];
             $items["startDate"] = $row["startDate"];
             $items["endDate"] = $row["endDate"];
             /* $items["subcategory_id"] = $row["subcategory_id"];
