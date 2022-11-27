@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 
 // $sql = "SELECT * FROM `items` WHERE `subcategory_id`=$subcategory_id;";
 try {
-$sql = "SELECT `startDate`, `endDate`, `items.name`, `items.photos` FROM `borrowingtable` inner join `items` on `itemId` = `items.id` where `studentID`=$user_id" ;
+$sql = "SELECT startDate, endDate, items.name, items.photos FROM borrowingtable inner join items on borrowingtable.itemId = items.id where studentID=$user_id" ;
 $result = $conn->query($sql);
 
 
