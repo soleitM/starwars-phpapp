@@ -25,11 +25,15 @@ if ($conn->connect_error) {
 // Create query using SQL string
 
 // $sql = "SELECT * FROM `items` WHERE `subcategory_id`=$subcategory_id;";
+try {
 $sql = "SELECT `startDate`, `endDate`, `items.name`, `items.photos` FROM `borrowingtable` inner join `items` on `itemId` = `items.id` where `studentID`=$user_id" ;
 $result = $conn->query($sql);
 
 
 //Resource: json-data-students.php
+
+
+
 if (mysqli_num_rows($result) > 0)
  {
 	// Create Array for JSON response
@@ -71,6 +75,13 @@ else {
     // print no students JSON
     print (json_encode($response));
 }
+} catch (\Exception $e){
+    $response["success"] = 1;
+    $response["message"] = $e->getMessage() ;
+
+    // print no students JSON
+    print (json_encode($response));
+ }
 
 $conn->close();
 ?>
